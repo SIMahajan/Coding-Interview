@@ -1,0 +1,7 @@
+1) print hello word
+
+int main()
+{
+    printf("hello word");
+    return 0;
+}
