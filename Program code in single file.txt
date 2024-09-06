@@ -1,7 +1,176 @@
 1) print hello word
+#include<stdio.h>
+void main(){
+    // first way by printf
+    printf("Hello, World!");
+
+    // secound way puts
+    puts("Hello, World!");
+    
+    //third way by write
+    write(1, "Hello, World!\n", 17);
+
+    // charecter by charecter
+    char *str = "Hello, World!\n";
+    while (*str)
+    {
+        putchar(*str++);
+    }
+}
+
+/* Hello, World!Hello, World!
+Hello, World!
+Hello, World!*/
+
+2)Add-two-number
+
+#include <stdio.h>
+1. Basic Addition
+void main()
+{
+
+    int a, b, sum;
+    printf("Enter two integers: ");
+    scanf("%d %d", &a, &b);
+    sum = a + b;
+    printf("Sum: %d", sum);
+}
+
+2. Using a Function
+
+int add(int x, int y)
+{
+    return x + y;
+    }
+    void main()
+    {
+
+        int a, b, sum;
+        printf("Enter two integers: ");
+        scanf("%d %d", &a, &b);
+        sum = add(a, b);
+        printf("Sum: %d\n", sum);
+    }
+
+3. Using Pointers
 
 int main()
 {
-    printf("hello word");
+    int a = 5;
+    int b = 3;
+    int *p1 = &a;
+    int *p2 = &b;
+    int sum = *p1 + *p2;
+    printf("Sum: %d\n", sum);
     return 0;
 }
+
+4. Using Arrays
+
+int main()
+{
+    int nums1[] = {1, 2, 3};
+    int nums2[] = {4, 5, 6};
+    int sum[3];
+    for (int i = 0; i < 3; i++)
+    {
+        sum[i] = nums1[i] + nums2[i];
+    }
+    for (int i = 0; i < 3; i++)
+    {
+        printf("Sum of pair %d: %d\n", i + 1, sum[i]);
+    }
+    return 0;
+}
+
+5. Using Structures
+
+struct Numbers
+{
+    int a;
+    int b;
+};
+
+int main()
+{
+    // Initialize the structure
+    struct Numbers nums = {5, 3};
+    // Add the numbers
+    int sum = nums.a + nums.b;
+    // Print the result
+    printf("Sum: %d\n", sum);
+    return 0;
+}
+
+6. Using Recursion
+
+ //Recursive function to add two Numbers
+
+int add(int a, int b)
+{
+    if (b == 0)
+    {
+        return a;
+    }
+    return add(a + 1, b - 1);
+}
+
+int main()
+{
+    int a = 5;
+    int b = 3;
+    int sum = add(a, b);
+    printf("Sum: %d\n", sum);
+    return 0;
+}
+
+prime number:-A prime number is a natural number greater than 1 and is completely divisible only by 1 and itself. 
+
+
+)User-Input-Calculator
+
+#include<stdio.h>
+void main()
+{
+    int a, b, add,mult,div,sub,mod;
+    printf("insert first number ");
+    scanf("%d", &a);
+    printf("insert second number ");
+    scanf("%d", &b);
+    add = a + b;
+    printf("The Addition of %d and %d is %d \n", a, b, add);
+    sub = a - b;
+    printf("The substraction of %d and %d is %d\n", a, b, sub);
+    mult = a * b;
+    printf("The multiplication of %d and %d is %d\n", a, b, mult);
+    div = a / b;
+    printf("The divission of %d and %d is %d\n", a, b, div);
+    mod = a % b;
+    printf("The modulo of %d and %d is %d\n", a, b, mod);
+}
+/* insert first number 10
+insert second number 5
+The Addition of 10 and 5 is 15
+The substraction of 10 and 5 is 5
+The multiplication of 10 and 5 is 50
+The divission of 10 and 5 is 2
+The modulo of 10 and 5 is 0*/
+
+3)change pointer value it also change actualvalue
+
+#include <stdio.h>
+
+void main()
+{
+    // First number
+    int a = 5;
+    // Pointer to the first number
+    int *p1 = &a;
+    // change pointer value it also change actualvalue
+    *p1 = 10;
+    printf("pointer %d\n", *p1);
+    printf("real %d\n", a);
+    // Pointer to the second number
+}
+/*pointer 10
+real 10*/
