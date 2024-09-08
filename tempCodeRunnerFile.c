@@ -1,35 +1,20 @@
-
-bool isPrime(int N)
+unsigned int factorial(unsigned int N)
 {
-    if (N <= 1)
-    {
-        return false;
-    }
-       for (int i = 2; i < N; i++)
-    {
+    int fact = 1, i;
 
-       if (N % i == 0)
-        {
-            return false;
-        }
+    // Loop from 1 to N to get the factorial
+    for (i = 1; i <= N; i++)
+    {
+        fact *= i;
     }
 
-    return true;
+    return fact;
 }
 
 int main()
 {
-    int N = 29;
-    printf("Is %d prime?\n", N);
-
-    if (isPrime(N))
-    {
-        printf("Yes");
-    }
-    else
-    {
-        printf("No");
-    }
-
+    int N = 5;
+    int fact = factorial(N);
+    printf("Factorial of %d is %d", N, fact);
     return 0;
 }

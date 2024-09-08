@@ -319,23 +319,375 @@ After swapping: a = 10, b = 5*/
 // }
 
 
-6)
+6) Program to Check Whether a Number is Positive, Negative, or Zero
+#include <stdio.h>
+int main()
+{
+    int N = 10;
+    if (N == 0)
+    {
+        printf("Zeri\n");
+    }
+    else if (N < 0)
+    {
+        printf("Negative\n");
+    }
+    else
+    {
+        printf("Positive \n");
+    }
+    return 0;
+}
 
 
-7)
+7)Program to Check for Odd or Even Number
+
+A number that is completely divisible by 2 is an even number and a number that is not completely divisible by 2 leaving a non-zero remainder is an odd number.
+even-0,2,4,6,8,10,etc
+odd-1,3,5,7,9,etc
+
+#include <stdio.h>
+
+int main()
+{
+    int N = 101;
+
+    int r = N % 2;
+    if (r == 0){
+        printf("Even");
+    }
+    else{
+        printf("Odd");
+    }
+    return 0;
+}
+
+// using Bitwise AND operator
+// int main()
+// {
+//     int N = 101;
+//     if (N & 1){
+//         printf("Odd\n");
+//     }
+//     else{
+//         printf("Even\n");
+//     }
+//     return 0;
+// }
 
 
-8)
+
+8)Program to Check  Vowel or Consonant
+#include <stdio.h>
+int main()
+{
+    char ch = 'A';
+    if (ch == 'a' || ch == 'A' || ch == 'e' || ch == 'E' || ch == 'i' || ch == 'I' || ch == 'o' || ch == 'O' || ch == 'u' || ch == 'U')
+    {
+
+        printf("The character %c is a vowel.\n", ch);
+    }
+    else {
+        printf("The character %c is a consonant.\n", ch);
+    }
+
+    return 0;
+}
+
+// using strchr() Function
+
+// #include <stdio.h>
+// #include <string.h>
+
+// int isVowel(char ch)
+// {
+//     // Make the list of vowels
+//     char vowels[] = "aeiouAEIOU";
+//     return (strchr(vowels, ch) != NULL);
+// }
+
+// int main()
+// {
+//     if (isVowel('a'))
+//         printf("a is vowel\n");
+//     else
+//         printf("a is consonant\n");
+//     return 0;
+// }
 
 
-9)
+9)program to Find the Largest Number Among Three Numbers
+#include <stdio.h>
+int main()
+{
+    int c = 10, b = 22, a = 9;
+
+    if (a >= b)
+    {
+        if (a >= c)
+            printf("%d is the largest number.", a);
+        else
+            printf("%d is the largest number.", c);
+    }
+    else
+    {
+        if (b >= c)
+            printf("%d is the largest number.", b);
+        else
+            printf("%d is the largest number.", c);
+    }
+
+    return 0;
+}
+ // Using Compound Expression in if-else
+// int main()
+// {
+//     int a = 11, b = 2, c = 9;
+
+//     // Finding max using compound expressions
+//     if (a >= b && a >= c)
+//         printf("%d is the largest number.", a);
+//     else if (b >= a && b >= c)
+//         printf("%d is the largest number.", b);
+//     else
+//         printf("%d is the largest number.", c);
+
+//     return 0;
+// }
+
+// Using Temporary Variable
+// int main()
+// {
+//     int a = 10, b = 22, c = 9;
+
+//     // Assume a is the largest
+//     int max = a;
+
+//     // If b is larger than max
+//     if (max < b)
+//         max = b;
+
+//     // If c is larger than max
+//     if (max < c)
+//         max = c;
+
+//     printf("%d is the largest number.", max);
+//     return 0;
+// }
 
 
-10)
 
-)User-Input-Calculator
+10)Program to Calculate Sum of Natural Numbers
+Natural Numbers=0,1,2,3,4,5,6,7,8,9,10,etc.
+// 1)Using while loop
+#include <stdio.h>
+int main()
+{
+    int i=1, sum = 0, n = 10;
+    while (i <= n)
+    {
+        sum += i;
+        i++;
+    }
+    printf("Sum = %d", sum);
+    return 0;
+}
 
-#include<stdio.h>
+// 2)Using for loop
+// int main()
+// {
+//     int sum = 0 , n = 10;
+//     for (int i = 1; i <= n;i++)
+//     {
+//         sum += i;
+//     }
+//     printf("Sum = %d", sum);
+//     return 0;
+// }
+
+// // 3)Using recursion
+// int fun(int a)
+// {
+//     if (a != 0)
+//     {
+//         return a + fun(a - 1);
+//     }
+//     else
+//     {
+//         return a;
+//     }
+// }
+// void main()
+// {
+//     int a, sum = 0, n = 12;
+//     printf("Sum = %d", fun(n));
+// }
+
+// 4)Using Functions
+
+// int sumofnaturalnumbers(int num)
+// {
+//     int i, s = 0;
+//     for (i = 0; i <= num; i++)
+//     {
+//         s += i;
+//     }
+//     printf("Sum = %d", s);
+// }
+
+// int main()
+// {
+
+//     int number = 10;
+//     sumofnaturalnumbers(number);
+//     return 0;
+// }
+
+11) Print Alphabets Loop From A to Z Using Loop
+#include <stdio.h>
+//using for loop
+int main()
+{
+    char i;
+
+    printf("The Alphabets from A to Z are: \n");
+    for (i = 'A'; i <= 'Z'; i++)
+    {
+        printf("%c ", i);
+    }
+
+    printf("\nThe Alphabets from a to z are: \n");
+
+    for (i = 'a'; i <= 'z'; i++)
+    {
+        printf("%c ", i);
+    }
+
+    return 0;
+}
+// using ASCII values
+// int main()
+// {
+//     int i;
+//     printf("Alphabets from (A-Z) are:\n");
+
+//     // ASCII value of A=65 and Z=90
+//     for (i = 65; i <= 90; i++)
+//     {
+//         printf("%c ", i);
+//     }
+
+//     printf("\nAlphabets from (a-z) are:\n");
+
+//     // ASCII value of a=97 and z=122
+//     for (i = 97; i <= 122; i++)
+//     {
+//         printf("%c ", i);
+//     }
+
+//     return 0;
+// }
+
+// wsing while loop
+
+// int main()
+//     {
+//         char i;
+//         i = 'A';
+//         printf("The Alphabets from A to Z are: \n");
+//         while(i <= 'Z')
+//         {
+//             printf("%c ", i);
+//             i++;
+//         }
+
+//         printf("\nThe Alphabets from a to z are: \n");
+//         i = 'a';
+//         while( i <= 'z')
+//         {
+//             printf("%c ", i);
+//             i++;
+//         }
+
+//         return 0;
+//     }
+// using do while loop
+
+// int main()
+// {
+//     char i;
+//     i = 'A';
+//     printf("The Alphabets from A to Z are: \n");
+   
+//     do{
+//         printf("%c ", i);
+//         i++;
+//     } while (i <= 'Z');
+
+//         printf("\nThe Alphabets from a to z are: \n");
+//     i = 'a';
+   
+//     do{
+//         printf("%c ", i);
+//         i++;
+//     } while (i <= 'z');
+
+//         return 0;
+// }
+
+12)Contol flow Leap Year Program
+#include <stdio.h>
+
+int factorial(int N)
+{
+    int fact = 1, i;
+    for (i = 1; i <= N; i++)
+    {
+        fact *= i;
+    }
+    return fact;
+}
+int main()
+{
+    int N = 5;
+    int fact = factorial(N);
+    printf("Factorial of %d is %d", N, fact);
+    return 0;
+}
+
+// using recurtion
+
+//  int factorial( int N)
+// {
+//     // Loop from 1 to N to get the factorial
+//     if(N==1)
+//     {
+//         return N;
+//     }else{
+//         return N * factorial(N - 1);
+//     }
+// }
+
+// int main()
+// {
+//     int N = 5;
+//     int fact = factorial(N);
+//     printf("Factorial of %d is %d", N, fact);
+//     return 0;
+// }
+
+14)
+15)
+16)
+17)
+18)
+19)
+20)
+
+
+100)Program to Make a Simple Calculator 
+#include <stdio.h>
+#include <float.h>
 void main()
 {
     int a, b, add,mult,div,sub,mod;
@@ -361,6 +713,104 @@ The substraction of 10 and 5 is 5
 The multiplication of 10 and 5 is 50
 The divission of 10 and 5 is 2
 The modulo of 10 and 5 is 0*/
+
+// using switch case
+// double simpleCalc(double num1, double num2, char op)
+// {
+//     double res;
+
+//     // Define all four operations in the corresponding
+//     // switch-case
+//     switch (op)
+//     {
+//     case '+':
+//         res = num1 + num2;
+//         break;
+//     case '-':
+//         res = num1 - num2;
+//         break;
+//     case '*':
+//         res = num1 * num2;
+//         break;
+//     case '/':
+//         res = num1 / num2;
+//         break;
+//     default:
+//         printf("Error! Operator is not correct.\n");
+//         return -DBL_MAX;
+//     }
+//     return res;
+// }
+
+// int main()
+// {
+//     char op;
+//     double num1, num2, res;
+
+//     // Read the operator
+//     printf("Enter an operator (+, -, *, /): ");
+//     scanf("%c", &op);
+
+//     // Read the two numbers
+//     printf("Enter two operands: ");
+//     scanf("%lf %lf", &num1, &num2);
+
+//     res = simpleCalc(num1, num2, op);
+
+//     // Print the result
+//     if (res != -DBL_MAX)
+//         printf("Result: %.2lf\n", res);
+
+//     return 0;
+// }
+
+// Using if-else Statement
+// double simpleCalc(double num1, double num2, char op)
+// {
+//     int res;
+
+//     // Perform the operation corresponding to the given
+//     // operator
+//     if (op == '+')
+//         res = num1 + num2;
+//     else if (op == '-')
+//         res = num1 - num2;
+//     else if (op == '*')
+//         res = num1 * num2;
+//     else if (op == '/')
+//         res = num1 / num2;
+//     else
+//     {
+//         printf("Error! Operator is not correct.\n");
+//         return -DBL_MAX;
+//     }
+
+//     return res;
+// }
+
+// int main()
+// {
+//     char op;
+//     double num1, num2, res;
+
+//     // Read the operator
+//     printf("Enter an operator (+, -, *, /): ");
+//     scanf("%c", &op);
+
+//     // Read the two numbers
+//     printf("Enter two operands: ");
+//     scanf("%lf %lf", &num1, &num2);
+
+//     // Evalute
+//     res = simpleCalc(num1, num2, op);
+
+//     // Print the result
+//     if (res != -DBL_MAX)
+//         printf("Result: %.2lf\n", res);
+
+//     return 0;
+// }
+
 
 3)change pointer value it also change actualvalue
 
