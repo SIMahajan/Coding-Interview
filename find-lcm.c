@@ -1,12 +1,12 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <math.h>
-//lcm 
+// lcm
 int main()
 {
-    int a = 20, b =100;
+    int a = 20, b = 100;
     ;
-    int max=(a > b) ? a : b;
+    int max = (a > b) ? a : b;
     // Check every number from 1 to N
     while (1)
     {
@@ -14,10 +14,9 @@ int main()
         {
             printf("lcm is %d ", max);
             break;
-       }
-       ++max;
+        }
+        ++max;
     }
-    
 
     return 0;
 }
