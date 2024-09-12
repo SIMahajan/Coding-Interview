@@ -1,23 +1,13 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <math.h>
-//lcm 
+#include <stdbool.h>
 int main()
 {
-    int a = 20, b =100;
-    ;
-    int max=(a > b) ? a : b;
-    // Check every number from 1 to N
-    while (1)
-    {
-        if (max % a == 0 && max % b == 0)
-        {
-            printf("lcm is %d ", max);
-            break;
-       }
-       ++max;
-    }
+    int digit = 5;
+    int sum = 0;
+    sum = pow(digit, 2);
+    printf("%d  ", sum);
+    printf("%d  ", digit*digit);
     
-
-    return 0;
 }

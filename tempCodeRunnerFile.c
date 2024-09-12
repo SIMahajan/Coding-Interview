@@ -1,20 +1,40 @@
-unsigned int factorial(unsigned int N)
+bool isArmstrong(int N)
 {
-    int fact = 1, i;
+    int temp = N;
+    int sum = 0;
 
-    // Loop from 1 to N to get the factorial
-    for (i = 1; i <= N; i++)
+    // Get the number of digits
+    // Adding 1 to compensate for the loss of fraction part
+    // of the value returned by log10 due to the conversion
+    // into integer
+     // 3
+
+    // Calculate the sum of the digits raised to the power of
+    // num_digits
+    while (temp > 0)
     {
-        fact *= i;
+        int digit = temp % 10;
+        printf("%d  ", (pow(digit, K)));
+        sum += pow(digit, K);
+        printf("%d  ", sum);
+        temp /= 10;
     }
 
-    return fact;
+    // Return whether the sum is equal to the original number or not
+    return (sum == N);
 }
 
 int main()
 {
-    int N = 5;
-    int fact = factorial(N);
-    printf("Factorial of %d is %d", N, fact);
+    int N = 153;
+    if (isArmstrong(N))
+    {
+        printf("Yes\n");
+    }
+    else
+    {
+        printf("No\n");
+    }
+
     return 0;
 }

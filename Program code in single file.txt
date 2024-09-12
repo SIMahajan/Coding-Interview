@@ -851,10 +851,219 @@ int main()
 
     return 0;
 }
-17)
-18)
-19)
-20)
+17)Control-flow-Check-Armstrong-Number
+An Armstrong number can be defined as a number that is equal to the sum of the Kth power of each digit in the number, where K is the number of digits in it.
+a number XY, which is 2-digit number, is Armstrong number if: XY = X2 + Y2
+a number XYZ, which is 3-digit number, is Armstrong number if: XYZ = X3 + Y3 + Z3
+a number XYZA, which is 4-digit number, is Armstrong number if: XYZA = X4 + Y4 + Z4 + A4
+
+#include <math.h>
+#include <stdio.h>
+#include <stdbool.h>
+
+// int main()
+// {
+//     int N = 370;
+//         int temp = N;
+//         int sum = 0;
+//         int K = log10(temp) + 1;
+//         while (temp > 0)
+//         {
+//             int digit = temp % 10;
+//             sum += pow(digit, K);
+//             temp /= 10;
+//         }
+//     if (sum == N)
+//     {
+//         printf("Yes\n");
+//     }
+//     else
+//     {
+//         printf("No\n");
+//     }
+//     return 0;
+// }
+// using funcion
+
+// bool isArmstrong(int N)
+// {
+//     int temp = N;
+//     int sum = 0;
+//     int K = log10(temp) + 1;
+    
+//     while (temp > 0)
+//     {
+//         int digit = temp % 10;
+//         sum += pow(digit, K);
+//         temp /= 10;
+//     }
+//     return (sum == N);
+// }
+
+// int main()
+// {
+//     int N = 370;
+//     if (isArmstrong(N))
+//     {
+//         printf("Yes\n");
+//     }
+//     else
+//     {
+//         printf("No\n");
+//     }
+
+//     return 0;
+// }
+
+
+//using recurtion
+
+int armstrongSum(int N, int K)
+{
+    if (N == 0)
+    {
+        return 0;
+    }
+    int digit = N % 10;
+    return pow(digit, K) + armstrongSum(N / 10, K);
+}
+bool isArmstrong(int N)
+{
+
+    int K = log10(N) + 1;
+    int sum = armstrongSum(N, K);
+    return (sum == N);
+}
+
+int main()
+{
+    int num = 370;
+
+    if (isArmstrong(num))
+    {
+        printf("Yes\n");
+    }
+    else
+    {
+        printf("No\n");
+    }
+    return 0;
+}
+
+18)Control-flow-print-Armstrong-Number-1-to-1000
+
+#include <math.h>
+#include <stdio.h>
+
+int main()
+{
+    int i, sum, num, count = 0;
+    printf("All Armstrong number between 1 and 1000 are:\n");
+
+    // This loop will run for 1 to 1000
+    for (i = 1; i <= 1000; i++)
+    {
+        num = i;
+        // Count number of digits.
+        while (num != 0)
+        {
+            num /= 10;
+            count++;
+        }
+        num = i;
+        
+        sum = pow(num % 10, count) + pow((num % 100 - num % 10) / 10, count) + pow((num % 1000 - num % 100) / 100, count);
+        // num=1234
+        // num % 10 = 4  num % 100 = 34   num % 1000 = 234
+
+        // Check for Armstrong Number
+        if (sum == i)
+        {
+            printf("%d ", i);
+        }
+        count = 0;
+    }
+}
+
+19)Reverse Number Program 
+
+#include <stdio.h>
+// int main()
+// {
+//     int num = 4562;
+   
+//     int rev_num = 0;
+//     printf("before Reverse of  is %d\n", num);
+//     while (num > 0)
+//     {
+//         rev_num = rev_num * 10 + num % 10;
+//         num = num / 10;
+//     }
+//     printf("After Reverse of  is %d", rev_num);
+// }
+// using function
+
+int reverseDigits(int num)
+{
+    int rev_num = 0;
+    while (num > 0)
+    {
+        rev_num = rev_num * 10 + num % 10;
+        num = num / 10;
+    }
+    return rev_num;
+}
+
+// Driver code
+int main()
+{
+    int num = 4562;
+    printf("Reverse of  is %d", reverseDigits(num));
+}
+20)Palindrome Number
+
+int reverseNum(int N)
+{
+
+    // Function to store the reversed number
+    int rev = 0;
+    while (N > 0)
+    {
+
+        // Extract the last digit
+        int dig = N % 10;
+
+        // Append the digit to the reversed number
+        rev = rev * 10 + dig;
+
+        // Remove the last digit
+        N /= 10;
+    }
+    return rev;
+}
+
+int isPalindrome(int N)
+{
+
+    // Negative numbers are not palindromes
+    if (N < 0)
+        return 0;
+    return N == reverseNum(N);
+}
+
+int main()
+{
+    int N = 121;
+    if (isPalindrome(N))
+    {
+        printf("Yes\n");
+    }
+    else
+    {
+        printf("No\n");
+    }
+    return 0;
+}
 
 
 100)Program to Make a Simple Calculator 
